@@ -9,7 +9,7 @@ const server = http.createServer(app);
 // Initialize Socket.IO
 const io = new Server(server, {
   cors: {
-    origin: "*", // Allow all origins for testing; restrict in production
+    origin: "https://react-video-call-app-five.vercel.app", // Allow all origins for testing; restrict in production
     methods: ["GET", "POST"],
     transports: ["websocket", "polling"],
   },
