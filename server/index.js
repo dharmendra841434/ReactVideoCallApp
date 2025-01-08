@@ -60,7 +60,7 @@ io.on("connection", (socket) => {
 // Create a Testing Route
 app.use(express.json());
 
-app.get("/health", (req, res) => {
+app.get("/", (req, res) => {
   return res.status(200).send(`Server running healthy`);
 });
 
