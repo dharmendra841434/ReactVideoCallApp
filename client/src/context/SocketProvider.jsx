@@ -9,13 +9,13 @@ export const useSocket = () => {
 };
 
 export const SocketProvider = (props) => {
-  const socket = useMemo(
+  const socketconnection = useMemo(
     () => io("https://reactvideocallapp.onrender.com/"),
     []
   );
 
   return (
-    <SocketContext.Provider value={socket}>
+    <SocketContext.Provider value={socketconnection}>
       {props.children}
     </SocketContext.Provider>
   );
