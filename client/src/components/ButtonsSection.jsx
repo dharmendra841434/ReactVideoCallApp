@@ -1,5 +1,5 @@
 import React from "react";
-import { IoMic } from "react-icons/io5";
+import { IoMic, IoMicOff } from "react-icons/io5";
 import {
   HiMiniVideoCamera,
   HiOutlineHandRaised,
@@ -13,12 +13,21 @@ const ButtonsSection = ({
   isVideoVisible,
   remoteSocketId,
   handleCall,
+  isMuteAudio,
+  handleMuteAudio,
 }) => {
   return (
     <div className="flex justify-center my-2 items-center space-x-4 bg-gray-800 p-4 rounded-lg">
       {/* Buttons */}
-      <button className="flex items-center justify-center w-12 h-12 bg-gray-700 hover:bg-gray-600 rounded-full text-white">
-        <IoMic className=" text-3xl" />
+      <button
+        onClick={handleMuteAudio}
+        className="flex items-center justify-center w-12 h-12 bg-gray-700 hover:bg-gray-600 rounded-full text-white"
+      >
+        {isMuteAudio ? (
+          <IoMicOff className=" text-3xl" />
+        ) : (
+          <IoMic className=" text-3xl" />
+        )}
       </button>
       <button
         onClick={toggleVideo}

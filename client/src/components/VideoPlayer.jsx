@@ -5,6 +5,7 @@ const LocalVideo = () => {
   const [isVideoVisible, setIsVideoVisible] = useState(true);
   const [stream, setStream] = useState(null); // Store the video stream
   const videoRef = useRef(null);
+  const [isMuteAudio, setIsMuteAudio] = useState(false);
 
   useEffect(() => {
     // Get the local video stream when the component mounts
@@ -52,7 +53,7 @@ const LocalVideo = () => {
           <video
             ref={videoRef}
             autoPlay
-            muted
+            muted={isMuteAudio}
             className=" w-full h-[85%] "
           ></video>
         ) : (
@@ -66,13 +67,9 @@ const LocalVideo = () => {
         <ButtonsSection
           isVideoVisible={isVideoVisible}
           toggleVideo={toggleVideoVisibility}
+          isMuteAudio={isMuteAudio}
+          handleMuteAudio={() => setIsMuteAudio((prev) => !prev)}
         />
-        {/* <button 
-          onClick={toggleVideoVisibility}
-          className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition"
-        >
-          {isVideoVisible ? "Hide Video" : "Show Video"}
-        </button> */}
       </div>
     </div>
   );

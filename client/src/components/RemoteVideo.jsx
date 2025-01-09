@@ -9,6 +9,7 @@ const RemoteVideo = ({
   handleCall,
 }) => {
   const [isVideoVisible, setIsVideoVisible] = useState(true);
+  const [isMuteAudio, setIsMuteAudio] = useState(false);
   const [stream, setStream] = useState(null); // Store the video stream
   const videoRef = useRef(null);
 
@@ -18,7 +19,7 @@ const RemoteVideo = ({
         {isVideoVisible ? (
           <ReactPlayer
             playing
-            muted
+            muted={isMuteAudio}
             height="550px"
             width="700px"
             url={myStream}
@@ -54,13 +55,9 @@ const RemoteVideo = ({
           toggleVideo={() => setIsVideoVisible((prev) => !prev)}
           remoteSocketId={remoteSocketId}
           handleCall={handleCall}
+          isMuteAudio={isMuteAudio}
+          handleMuteAudio={() => setIsMuteAudio((prev) => !prev)}
         />
-        {/* <button 
-          onClick={toggleVideoVisibility}
-          className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition"
-        >
-          {isVideoVisible ? "Hide Video" : "Show Video"}
-        </button> */}
       </div>
     </div>
   );

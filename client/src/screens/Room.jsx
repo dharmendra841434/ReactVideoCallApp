@@ -132,36 +132,6 @@ const RoomPage = () => {
           <LocalVideo />
         )}
       </div>
-
-      {/* <div className="flex flex-wrap gap-8 justify-center">
-        {myStream && (
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">My Stream</h2>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <ReactPlayer
-                playing
-                muted
-                height="200px"
-                width="300px"
-                url={myStream}
-              />
-            </div>
-          </div>
-        )}
-        {remoteStream && (
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">Remote Stream</h2>
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <ReactPlayer
-                playing
-                height="200px"
-                width="300px"
-                url={remoteStream}
-              />
-            </div>
-          </div>
-        )}
-      </div> */}
     </div>
   );
 };
